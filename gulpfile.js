@@ -10,13 +10,13 @@ const tasks = require('./gulpTasks/index');
 const distPath = config.paths.dirs.build;
 const paths = config.paths;
 
-let transferHtml = tasks.transferFile(gulp,{
+let transferHtml = tasks.transferFile(gulp, {
   taskName: 'transferHtml',
   srcPath: paths.html,
   distPath: distPath
 });
 
-let transferImages = tasks.transferFile(gulp,{
+let transferImages = tasks.transferFile(gulp, {
   taskName: 'transferImages',
   srcPath: paths.images,
   distPath: distPath

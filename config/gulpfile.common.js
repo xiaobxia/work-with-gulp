@@ -14,7 +14,7 @@ const config = {
     fonts: './src/**/*.{eot,svg,ttf,woff,woff2}'
   },
   autoprefixBrowser: ['chrome >20', 'safari > 10'],
-  //{"path": "/api","target": "http://121.40.18.21/api"}
+  //proxy例子: {"path": "/api","target": "http://121.40.18.21/api"}
   server: {
     proxy: [],
     port: 4000
