@@ -15,7 +15,7 @@ const concat = require("gulp-concat");
  */
 module.exports = function (gulp, option) {
   gulp.task(option.taskName, function () {
-    gulp.src(option.srcPath)
+    return gulp.src(option.srcPath)
       .pipe(concat(option.distFileName)).pipe(gulp.dest(option.distPath));
   });
   return option.taskName;
