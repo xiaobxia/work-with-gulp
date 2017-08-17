@@ -60,7 +60,7 @@ gulp.task('watch', function () {
     browserSync.reload();
     cb();
   }
-
+  //watch的时候不clean
   gulp.watch(paths.html, gulp.series(transferHtml, serverReload));
   gulp.watch(paths.scss, gulp.series(buildScss, serverReload));
   gulp.watch(paths.js, gulp.series(es6, serverReload));

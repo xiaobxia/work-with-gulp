@@ -6,6 +6,7 @@ const config = {
     dirs: {
       build: 'dist'
     },
+    //匹配了src/和src/html/
     html: './src/**/*.html',
     images: './src/**/*.{JPG,jpg,png,gif,ico}',
     scss: './src/**/*.scss',
