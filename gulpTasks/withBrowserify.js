@@ -6,6 +6,9 @@ const source = require('vinyl-source-stream');
 const buffer = require('vinyl-buffer');
 const babelify = require('babelify');
 /**
+ * 使用时暴露给浏览器的使用module.exports
+ * 内部使用import和export
+ *
  * @param gulp
  * @param option
  *
