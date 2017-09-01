@@ -12,6 +12,7 @@ let scssMin = require('./scssMin');
 let es6 = require('./es6');
 let es6Min = require('./es6Min');
 let imageMin = require('./imageMin');
+let pug = require('./pug');
 
 module.exports = {
   cleanDist,
@@ -24,5 +25,6 @@ module.exports = {
   scssMin,
   es6,
   es6Min,
-  imageMin
+  imageMin,
+  pug
 };

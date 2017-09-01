@@ -34,6 +34,12 @@ let es6 = tasks.es6(gulp, {
   distPath: distPath
 });
 
+let pug = tasks.pug(gulp, {
+  taskName: 'pug',
+  srcPath: paths.pug,
+  distPath: distPath
+});
+
 let cleanDist = tasks.cleanDist(gulp, {
   taskName: 'cleanDist',
   path: distPath
@@ -53,7 +59,7 @@ gulp.task('server', function (cb) {
   }, cb);
 });
 
-gulp.task('build', gulp.series(cleanDist, gulp.parallel(transferHtml, buildScss, es6, transferImages)));
+gulp.task('build', gulp.series(cleanDist, gulp.parallel(transferHtml, buildScss, es6, transferImages, pug)));
 
 gulp.task('watch', function () {
   function serverReload(cb) {
@@ -61,6 +67,7 @@ gulp.task('watch', function () {
     cb();
   }
   //watch的时候不clean
+  gulp.watch(paths.pug, gulp.series(pug, serverReload));
   gulp.watch(paths.html, gulp.series(transferHtml, serverReload));
   gulp.watch(paths.scss, gulp.series(buildScss, serverReload));
   gulp.watch(paths.js, gulp.series(es6, serverReload));
