@@ -20,6 +20,8 @@ module.exports = function (gulp, option) {
       .pipe(cleanCSS({compatibility: 'ie8'}))
       .pipe(sourcemaps.write())
       .pipe(gulp.dest(option.distPath));
+    //局部更新，不会导致页面重刷（重刷意味着产生ajax请求，也意味着页面的状态变了）
+    //.pipe(browserSync.reload({stream:true}));
   });
   return option.taskName;
 };
